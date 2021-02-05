@@ -3,7 +3,7 @@ package HomeWork4;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class DataContainer <T> implements Comparator<T>{
+public class DataContainer <T> {
 
     private T[] data;
 
@@ -63,7 +63,7 @@ public class DataContainer <T> implements Comparator<T>{
      * @param index индес элемента, который будет удален
      */
     private void arrayDell(int index) {
-        T[] arr = (T[]) new Object[data.length - 1];
+        T[] arr = Arrays.copyOf(data, data.length - 1);
         for (int i = 0, j = 0; i < data.length; i++) {
             if (i != index) {
                 arr[j++] = data[i];
@@ -116,7 +116,21 @@ public class DataContainer <T> implements Comparator<T>{
         return index < data.length && index >= 0;
     }
 
+    /**
+     * Метод сортировки
+     * Использовать только с методом Comparator.nullsLast
+     * @param comparator компоратор
+     */
     public void sort(Comparator<T> comparator) {
+        for (int i = 1; i < data.length; i++) {
+            for (int j = 0; j < data.length - i; j++) {
+                if (comparator.compare(data[j], data[j + 1]) >= 0) {
+                   T buff = data[j];
+                    data[j] = data[j + 1];
+                    data[j + 1] = buff;
+                }
+            }
+        }
     }
 
     /**
@@ -141,8 +155,4 @@ public class DataContainer <T> implements Comparator<T>{
         return str.toString();
     }
 
-    @Override
-    public int compare(Object o1, Object o2) {
-        return 0;
-    }
 }
