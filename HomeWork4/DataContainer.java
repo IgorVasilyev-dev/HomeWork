@@ -1,7 +1,10 @@
 package HomeWork4;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Iterator;
 
 public class DataContainer <T> {
 
@@ -131,6 +134,43 @@ public class DataContainer <T> {
                 }
             }
         }
+    }
+
+    /**
+     * Метод сортировки коллекции
+     * @param dataContainer коллекция для сортировки
+     * @param <T> дженерик обощенного типа
+     */
+    public static <T extends Comparable> void sort(@NotNull DataContainer <T> dataContainer) {
+        for (int i = 1; i < dataContainer.data.length; i++) {
+            for (int j = 0; j < dataContainer.data.length - i; j++) {
+                if (dataContainer.data[j].compareTo(dataContainer.data[j + 1]) >= 0) {
+                    T buff = dataContainer.data[j];
+                    dataContainer.data[j] = dataContainer.data[j + 1];
+                    dataContainer.data[j + 1] = buff;
+                }
+            }
+        }
+
+    }
+
+    /**
+     * метод сортировки, который принимает объект DataContainer и реализацию интерфейса Comparator
+     * @param dataContainer коллекция для сортировки
+     * @param comparator компаратор
+     * @param <T> дженерик обобщенного типа
+     */
+    public static <T> void sort(DataContainer <T> dataContainer, Comparator <T> comparator) {
+        for (int i = 1; i < dataContainer.data.length; i++) {
+            for (int j = 0; j < dataContainer.data.length - i; j++) {
+                if (comparator.compare(dataContainer.data[j], dataContainer.data[j + 1]) >= 0) {
+                    T buff = dataContainer.data[j];
+                    dataContainer.data[j] = dataContainer.data[j + 1];
+                    dataContainer.data[j + 1] = buff;
+                }
+            }
+        }
+
     }
 
     /**
