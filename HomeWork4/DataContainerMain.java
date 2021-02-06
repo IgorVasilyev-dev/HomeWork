@@ -34,12 +34,19 @@ public class DataContainerMain {
         System.out.println(dataContainer.toString()); // [777, 2, 1, 21, 22] вывели содержимое поля без пустых значений
 
         //11
-        dataContainer.add(6); // убираем null из поля
+        dataContainer.add(6); // убираем null из поля data
         DataContainer.sort(dataContainer);// вызвали метод сортировки sort, который принимает DataContainer с дженериком extends Comparable
         System.out.println(dataContainer.toString()); // [1, 2, 6, 21, 22, 777]
+
         // 12
         DataContainer.sort(dataContainer,Comparator.nullsLast(Comparator.reverseOrder())); // вызвали метод сортировки reverseOrder реализуя Comparator
         System.out.println(dataContainer.toString()); // [777, 22, 21, 6, 2, 1] поле после сортировки
+
+        // 13
+        while (dataContainer.hasNext()) {
+            System.out.print(dataContainer.next() + " ");
+            System.out.println(dataContainer.hasNext());
+        }
     }
 
 }
