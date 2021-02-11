@@ -1,4 +1,4 @@
-package HomeWork5.comparator;
+package HomeWork5.comparators;
 
 import HomeWork5.dto.Student;
 
@@ -8,6 +8,6 @@ public class StudentAgeComparator implements Comparator<Student> {
 
     @Override
     public int compare(Student o1, Student o2) {
-        return o1.compareTo(o2);
+        return ((Integer) o1.getAge()).compareTo(o2.getAge());
     }
 }

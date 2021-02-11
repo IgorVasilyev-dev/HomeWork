@@ -1,21 +1,29 @@
 package HomeWork5.dto;
 
-public class Student implements Comparable<Student> {
+import java.text.DecimalFormat;
+import java.util.Objects;
 
-    private  int id;
-    private  String name;
-    private  int age;
-    private  double score;
-    private  boolean olympic;
+/**
+ * 1. Создать класс Student с полями
+ *  порядковый номер (int),
+ *  имя (Строка размером от 3 до 10 русских символов),
+ *  возраст (7-17),
+ *  оценка(0.0-10.0),
+ *  признак участия в олимпиадах (bool).
+ */
+public class Student implements Comparable<Student>{
+    private final int id;
+    private final String name;
+    private final int age;
+    private final double score;
+    private final boolean olympic;
 
-    public void Student(int id, String name, int age, double score, boolean olympic) {
-
+    public Student(int id, String name, int age, double score, boolean olympic) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.score = score;
         this.olympic = olympic;
-
     }
 
     public int getId() {
@@ -44,28 +52,27 @@ public class Student implements Comparable<Student> {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return id == student.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
     public String toString() {
+        DecimalFormat df = new DecimalFormat("#0.##");
         return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
-                ", score=" + score +
+                ", score=" + df.format(score) +
                 ", olympic=" + olympic +
                 '}';
-    }
-
-    public void setID(int incrementAndGet) {
-    }
-
-    public void setAge(int randInt) {
-    }
-
-    public void setName(String randString) {
-    }
-
-    public void setRate(double randDouble) {
-    }
-
-    public void setOlympic(boolean randBoolean) {
     }
 }

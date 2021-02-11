@@ -1,14 +1,14 @@
-package HomeWork5.utils.predicate;
+package HomeWork5.predicate;
 
 import HomeWork5.dto.Student;
 
 import java.util.function.Predicate;
 
-public class PredicateScore implements Predicate<Student> {
+public class StudentScorePredicate implements Predicate<Student> {
 
     int score;
 
-    public PredicateScore(int score) {
+    public StudentScorePredicate(int score) {
         this.score = score;
     }
 
@@ -16,4 +16,6 @@ public class PredicateScore implements Predicate<Student> {
     public boolean test(Student o) {
         return o.getScore() >= score;
     }
+
 }
+

@@ -4,10 +4,9 @@ import java.util.Comparator;
 import java.util.List;
 
 public class SortUtils {
-
     public static <T> void bubbleSort(List<T> container, Comparator<T> comparator) {
         int lengthContainer = container.size();
-        for (int j = 1; j < lengthContainer - 1 ; j++) {
+        for (int j = 1; j < lengthContainer - 1; j++) {
             boolean flagEnd = true;
             for (int i = 0; i < lengthContainer - j; i++) {
                 T left = container.get(i);
@@ -22,6 +21,7 @@ public class SortUtils {
             if (flagEnd) {
                 break;
             }
+
         }
     }
 
@@ -43,7 +43,7 @@ public class SortUtils {
                 T left = container.get(i - 1);
                 T right = container.get(i);
                 int compare = comparator.compare(right, left);
-                if (compare < 0) {
+                if (compare < 1) {
                     container.set(i, left);
                     container.set(i - 1, right);
                 }

@@ -1,17 +1,17 @@
-package HomeWork5.utils;
+package HomeWork5.core.random;
 
-import HomeWork5.utils.api.IRandom;
+import HomeWork5.core.random.api.IRandom;
 
+//TODO Надо реализовать нормальные рандом
 public class FakeRandom implements IRandom {
-
     @Override
     public int randInt(int min, int max) {
-        return 0;
+        return 13;
     }
 
     @Override
     public double randDouble(double min, double max) {
-        return 0;
+        return 9;
     }
 
     @Override

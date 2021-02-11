@@ -1,7 +1,6 @@
-package HomeWork5.utils.api;
+package HomeWork5.core.random.api;
 
 public interface IRandom {
-
     /**
      * Возвращает ранодом int в заданом промежутке
      * @param min с
@@ -31,5 +30,4 @@ public interface IRandom {
      * @return рандомное значение
      */
     boolean randBoolean();
-
 }

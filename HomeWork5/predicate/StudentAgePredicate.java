@@ -1,13 +1,13 @@
-package HomeWork5.utils.predicate;
+package HomeWork5.predicate;
 
 import HomeWork5.dto.Student;
 
 import java.util.function.Predicate;
 
-public class PredicateAge implements Predicate <Student> {
+public class StudentAgePredicate implements Predicate <Student> {
         int age;
 
-        public PredicateAge(int age) {
+        public StudentAgePredicate(int age) {
             this.age = age;
         }
 
@@ -15,4 +15,4 @@ public class PredicateAge implements Predicate <Student> {
         public boolean test(Student o) {
             return o.getAge() >= age;
         }
-    }
+}
