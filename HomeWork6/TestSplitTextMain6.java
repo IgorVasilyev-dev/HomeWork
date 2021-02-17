@@ -1,8 +1,7 @@
 package HomeWork6;
 
 
-import HomeWork6.text.api.EasySearch;
-import HomeWork6.text.api.SearchEngineWithRegistry;
+import HomeWork6.text.SearchEngineWithRegistry;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -17,7 +16,7 @@ public class TestSplitTextMain6 {
         );
 
         SearchEngineWithRegistry searchEngineWithRegistry = new SearchEngineWithRegistry();
-        String word = "война и мир";
+        String word = "и";
         System.out.println("Слово "+ word + " встречается " + searchEngineWithRegistry.search(text, word) + " раз");
     }
 }

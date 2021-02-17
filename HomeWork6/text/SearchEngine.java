@@ -1,9 +1,10 @@
-package HomeWork6.text.api;
+package HomeWork6.text;
+
+import HomeWork6.text.api.ISearchEngine;
+import HomeWork6.text.api.ITextSpliterator;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class SearchEngine implements ISearchEngine {
 

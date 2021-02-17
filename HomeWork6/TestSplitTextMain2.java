@@ -2,7 +2,7 @@ package HomeWork6;
 
 
 import HomeWork6.text.api.ITextSpliterator;
-import HomeWork6.text.api.TextSpliterator;
+import HomeWork6.text.TextSpliterator;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

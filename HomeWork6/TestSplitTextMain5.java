@@ -1,8 +1,7 @@
 package HomeWork6;
 
 
-import HomeWork6.text.api.EasySearch;
-import HomeWork6.text.api.SearchEngine;
+import HomeWork6.text.EasySearch;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

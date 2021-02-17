@@ -2,7 +2,7 @@ package HomeWork6;
 
 
 import HomeWork6.text.api.ITextSpliterator;
-import HomeWork6.text.api.TextSpliterator;
+import HomeWork6.text.TextSpliterator;
 
 public class TestSplitTextMain1 {
     public static void main(String[] args) {

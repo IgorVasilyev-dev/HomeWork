@@ -1,4 +1,6 @@
-package HomeWork6.text.api;
+package HomeWork6.text;
+
+import HomeWork6.text.api.ITextSpliterator;
 
 import java.util.regex.Pattern;
 

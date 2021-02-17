@@ -1,9 +1,7 @@
 package HomeWork6;
 
 
-import HomeWork6.text.api.ITextSpliterator;
-import HomeWork6.text.api.SearchEngine;
-import HomeWork6.text.api.TextSpliterator;
+import HomeWork6.text.SearchEngine;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

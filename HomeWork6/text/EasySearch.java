@@ -1,6 +1,8 @@
-package HomeWork6.text.api;
+package HomeWork6.text;
 
-public class EasySearch implements ISearchEngine{
+import HomeWork6.text.api.ISearchEngine;
+
+public class EasySearch implements ISearchEngine {
 
     @Override
     public long search(String text, String word) {
