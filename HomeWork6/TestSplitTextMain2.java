@@ -1,3 +1,6 @@
+/*
+2.1 Найти в тексте все использованные слова и поместить их в коллекцию Set.
+ */
 package HomeWork6;
 
 
@@ -14,7 +17,7 @@ import java.util.Set;
 public class TestSplitTextMain2 {
     public static void main(String[] args) throws IOException {
         String text = Files.readString(
-                Path.of("C:\\Users\\user\\Desktop\\IDEprojects\\JD1\\HomeWork\\src\\HomeWork6\\Война и мир_книга.txt"),
+                Path.of("C:\\Users\\user\\Desktop\\IDEprojects\\JD1\\HomeWork\\src\\HomeWork6\\text\\Война и мир_книга.txt"),
                 StandardCharsets.UTF_8
         );
 

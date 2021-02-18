@@ -1,3 +1,7 @@
+/*
+Найти в тексте топ N (настраиваемое значение) слов и вывести количество этих слов используя Map и List.
+Отсортировать по количеству. Распечатать в консоль.
+ */
 package HomeWork6;
 
 
@@ -14,7 +18,7 @@ import java.util.*;
 public class TestSplitTextMain3 {
     public static void main(String[] args) throws IOException {
         String text = Files.readString(
-                Path.of("C:\\Users\\user\\Desktop\\IDEprojects\\JD1\\HomeWork\\src\\HomeWork6\\Война и мир_книга.txt"),
+                Path.of("C:\\Users\\user\\Desktop\\IDEprojects\\JD1\\HomeWork\\src\\HomeWork6\\text\\Война и мир_книга.txt"),
                 StandardCharsets.UTF_8
         );
 
@@ -36,14 +40,10 @@ public class TestSplitTextMain3 {
         List<Map.Entry<String, Integer>> entries = new ArrayList<>(data.entrySet());
         entries.sort(new ValueString());
 
-        int n = 10;
-        for(int i = 0; i< n; i++) {
+        int n = 10; // количество выводимый значейний "Топ 10"
+        for(int i = 0; i < n; i++) {
             System.out.println(entries.get(i));
         }
-
-
-        System.out.println(data.get("отступления")); // 14 c учетом регистра
-        System.out.println(data.get("мир")); // 33 с учетом регистра
     }
 }
 

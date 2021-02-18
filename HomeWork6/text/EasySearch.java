@@ -6,7 +6,8 @@ public class EasySearch implements ISearchEngine {
 
     @Override
     public long search(String text, String word) {
-        int count = 0, fromIndex = 0;
+        long count = 0;
+        int fromIndex = 0;
 
         while ((fromIndex = text.indexOf(word, fromIndex)) != -1 ){
 
