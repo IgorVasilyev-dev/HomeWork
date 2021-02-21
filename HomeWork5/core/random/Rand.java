@@ -1,3 +1,6 @@
+/*
+2.1 Заполнять имя рандомными русскими символами
+ */
 package HomeWork5.core.random;
 
 import HomeWork5.core.random.api.IRandom;
