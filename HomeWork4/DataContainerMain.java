@@ -7,7 +7,7 @@ public class DataContainerMain {
 
     public static void main(String[] args) {
 
-        DataContainer<Integer> dataContainer = new DataContainer<>(new Integer[]{null, 2, 1, null,324, 21,22});
+        DataContainer<Integer> dataContainer = new DataContainer<>(new Integer[]{null,2,1,null,324,22,21});
 
         // 4
         System.out.println(dataContainer.add(777)); // индекс добавлненного элемента = 0
@@ -30,17 +30,15 @@ public class DataContainerMain {
         System.out.println(Arrays.toString(dataContainer.getItems())); // [1, 2, 21, 22, 777, null] поле после сортировки
 
         // 10
-        System.out.println(Arrays.toString(dataContainer.getItems()));// [777, 2, 1, null, 21, 22]
         System.out.println(dataContainer.toString()); // [777, 2, 1, 21, 22] вывели содержимое поля без пустых значений
 
         //11
-        dataContainer.add(6); // убираем null из поля data
         DataContainer.sort(dataContainer);// вызвали метод сортировки sort, который принимает DataContainer с дженериком extends Comparable
-        System.out.println(dataContainer.toString()); // [1, 2, 6, 21, 22, 777]
+        System.out.println(dataContainer.toString()); // [1, 2, 21, 22, 777]
 
         // 12
-        DataContainer.sort(dataContainer,Comparator.nullsLast(Comparator.reverseOrder())); // вызвали метод сортировки reverseOrder реализуя Comparator
-        System.out.println(dataContainer.toString()); // [777, 22, 21, 6, 2, 1] поле после сортировки
+        DataContainer.sort(dataContainer,Comparator.reverseOrder()); // вызвали метод сортировки reverseOrder реализуя Comparator
+        System.out.println(dataContainer.toString()); // [777, 22, 21, 2, 1] поле после сортировки
 
         // 13
         while (dataContainer.hasNext()) {

@@ -1,7 +1,5 @@
 package HomeWork4;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -142,10 +140,18 @@ public class DataContainer<T> implements Iterator<T> {
      * @param dataContainer коллекция для сортировки
      * @param <T> дженерик обощенного типа
      */
-    public static <T extends Comparable> void sort(@NotNull DataContainer <T> dataContainer) {
+    public static <T extends Comparable> void sort(DataContainer <T> dataContainer) {
+        int a;
         for (int i = 1; i < dataContainer.data.length; i++) {
             for (int j = 0; j < dataContainer.data.length - i; j++) {
-                if (dataContainer.data[j].compareTo(dataContainer.data[j + 1]) >= 0) {
+                 if (dataContainer.data[j] == null) {
+                   a = dataContainer.data[j + 1] == null ? 0 : -1;
+                } else if (dataContainer.data[j + 1] == null) {
+                    a =  dataContainer.data[j] == null ? -1: 1;
+                } else {
+                    a = dataContainer.data[j].compareTo(dataContainer.data[j + 1]);
+                }
+                if (a > 0) {
                     T buff = dataContainer.data[j];
                     dataContainer.data[j] = dataContainer.data[j + 1];
                     dataContainer.data[j + 1] = buff;
@@ -162,9 +168,17 @@ public class DataContainer<T> implements Iterator<T> {
      * @param <T> дженерик обобщенного типа
      */
     public static <T> void sort(DataContainer <T> dataContainer, Comparator <T> comparator) {
+        int a;
         for (int i = 1; i < dataContainer.data.length; i++) {
             for (int j = 0; j < dataContainer.data.length - i; j++) {
-                if (comparator.compare(dataContainer.data[j], dataContainer.data[j + 1]) >= 0) {
+                if (dataContainer.data[j] == null) {
+                    a = dataContainer.data[j + 1] == null ? 0 : -1;
+                } else if (dataContainer.data[j + 1] == null) {
+                    a =  dataContainer.data[j] == null ? -1: 1;
+                } else {
+                    a = comparator.compare(dataContainer.data[j], dataContainer.data[j + 1]);
+                }
+                if (a > 0) {
                     T buff = dataContainer.data[j];
                     dataContainer.data[j] = dataContainer.data[j + 1];
                     dataContainer.data[j + 1] = buff;
