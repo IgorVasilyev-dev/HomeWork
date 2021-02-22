@@ -1,4 +1,4 @@
-TestSplitMain1 - проверка на раз,иение текста по примерам.
+TestSplitMain1 - проверка на разбиение текста по примерам.
 
 TestSplitMain2 - 1. Скачать книгу "Война и мир" https://www.dropbox.com/s/8mstiwnx9o9btw4/%D0%B2%D0%BE%D0%B9%D0%BD%D0%B0%20%D0%B8%20%D0%BC%D0%B8%D1%80_%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0.txt?dl=0 на компьютер.
 
