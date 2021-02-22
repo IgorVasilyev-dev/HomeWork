@@ -20,6 +20,12 @@ public class Rand implements IRandom {
         return rand.nextDouble(min,max);
     }
 
+    /**
+     * Метод генерирует строку из случайных русских сиволов, длинна генерируется случайно в диапозоне [min max]
+     * @param min минимальное количество символов
+     * @param max максимальное количество символов
+     * @return возвращает строку заполненую случайными русскими буквами, длинна строки  в интервале от min до max
+     */
     @Override
     public String randString(int min, int max) {
         Random rand = new Random();

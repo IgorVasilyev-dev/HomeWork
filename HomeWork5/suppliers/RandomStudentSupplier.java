@@ -3,8 +3,6 @@ package HomeWork5.suppliers;
 import HomeWork5.core.GlobalCounter;
 import HomeWork5.dto.Student;
 import HomeWork5.core.random.api.IRandom;
-
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Supplier;
 
 public class RandomStudentSupplier implements Supplier<Student> {
@@ -21,11 +19,6 @@ public class RandomStudentSupplier implements Supplier<Student> {
         this.nameLengthFrom = nameLengthFrom;
         this.nameLengthTo = nameLengthTo;
     }
-
-//
-//    public RandomStudentSupplier() {
-//        this.rnd = new FakeRandom();
-//    }
 
     @Override
     public Student get() {

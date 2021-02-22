@@ -6,7 +6,7 @@
 	1.4 оценка(0.0-10.0)
 	1.5 признак участия в олимпиадах (bool).
 2. Создать 10_000 объектов класс Student и поместить в коллекцию. Данные заполняются рандомно.
-2.1 Заполнять имя рандомными русскими символами
+2.2* Заполнять имя рандомными понятными именами
  */
 
 package HomeWork5;
@@ -16,23 +16,33 @@ import HomeWork5.comparators.StudentNameComparator;
 import HomeWork5.comparators.StudentScoreAndAgeComparator;
 import HomeWork5.comparators.StudentScoreComparator;
 import HomeWork5.core.GlobalCounter;
-import HomeWork5.core.random.Rand;
+import HomeWork5.core.random.RandStringName;
+import HomeWork5.core.random.api.IRandomTextSpliterator;
+import HomeWork5.core.random.split.TextSpliterator;
 import HomeWork5.dto.Student;
 import HomeWork5.predicate.StudentAgeAndScorePredicate;
 import HomeWork5.suppliers.RandomStudentSupplier;
 import HomeWork5.utils.SortUtils;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-public class StudentMain {
-    public static void main(String[] args) throws IOException {
+public class StudentMain1 {
+    public static void main(String[] args) {
 
-        Supplier<Student> supplier2 = new RandomStudentSupplier(new GlobalCounter(), new Rand(),
+        String text = "Август, Вася , Авраам , Агафон , Аким , Бенедикт" +
+                "Богдан, Болеслав, Борис, Инга, Инна" +
+                "Вадим, Валентин, Валерий, Василий" +
+                "Вениамин, Герасим, Герман, Давид, Давыд, Дамир" +
+                "Даниил, Оля, Руслан, Юля, Яна";
+
+        IRandomTextSpliterator spliterator = new TextSpliterator();
+        String[] strings = spliterator.split(text);
+
+        Supplier<Student> supplier2 = new RandomStudentSupplier(new GlobalCounter(), new RandStringName(strings),
                 3, 10);
         Predicate<Student> predicate2 = new StudentAgeAndScorePredicate(12, 8);
         StudentScoreComparator comp1 = new StudentScoreComparator();

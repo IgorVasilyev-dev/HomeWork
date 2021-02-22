@@ -6,33 +6,47 @@
 	1.4 оценка(0.0-10.0)
 	1.5 признак участия в олимпиадах (bool).
 2. Создать 10_000 объектов класс Student и поместить в коллекцию. Данные заполняются рандомно.
-2.1 Заполнять имя рандомными русскими символами
+2.3** Заполнять имя рандомными понятными именами загруженными из файла.
  */
 
 package HomeWork5;
 
-import HomeWork5.comparators.StudentAgeComparator;
-import HomeWork5.comparators.StudentNameComparator;
-import HomeWork5.comparators.StudentScoreAndAgeComparator;
-import HomeWork5.comparators.StudentScoreComparator;
+import HomeWork5.comparators.*;
 import HomeWork5.core.GlobalCounter;
 import HomeWork5.core.random.Rand;
+import HomeWork5.core.random.RandStringName;
+import HomeWork5.core.random.api.IRandomTextSpliterator;
+import HomeWork5.core.random.split.TextSpliterator;
 import HomeWork5.dto.Student;
 import HomeWork5.predicate.StudentAgeAndScorePredicate;
+import HomeWork5.predicate.StudentAgePredicate;
+import HomeWork5.predicate.StudentScorePredicate;
 import HomeWork5.suppliers.RandomStudentSupplier;
 import HomeWork5.utils.SortUtils;
 
+
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-public class StudentMain {
+public class StudentMain3 {
     public static void main(String[] args) throws IOException {
 
-        Supplier<Student> supplier2 = new RandomStudentSupplier(new GlobalCounter(), new Rand(),
+        String text = Files.readString(
+                Path.of("C:\\Users\\user\\Desktop\\IDEprojects\\JD1\\HomeWork\\src\\HomeWork5\\RusNames.txt"),
+                StandardCharsets.UTF_8
+        );
+
+        IRandomTextSpliterator spliterator = new TextSpliterator();
+        String[] strings = spliterator.split(text);
+
+        Supplier<Student> supplier2 = new RandomStudentSupplier(new GlobalCounter(), new RandStringName(strings),
                 3, 10);
         Predicate<Student> predicate2 = new StudentAgeAndScorePredicate(12, 8);
         StudentScoreComparator comp1 = new StudentScoreComparator();
