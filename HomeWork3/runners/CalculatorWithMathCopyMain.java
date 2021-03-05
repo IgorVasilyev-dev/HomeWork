@@ -1,10 +1,12 @@
-package HomeWork3.calcs.simple;
+package HomeWork3.runners;
 
-public class CalculatorWithOperatorMain {
+import HomeWork3.calcs.simple.CalculatorWithMathCopy;
+
+public class CalculatorWithMathCopyMain {
 
     public static void main(String[] args) {
 
-        CalculatorWithOperator calculator = new CalculatorWithOperator();
+        CalculatorWithMathCopy calculator = new CalculatorWithMathCopy();
 
         double division = calculator.division(28,5);
 

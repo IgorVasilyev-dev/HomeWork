@@ -5,29 +5,41 @@ package HomeWork2.loops;
 
 public class FactorialRecursion {
 
-    public static void main(String[] args) {
-        int i = 0;
-        for ( String arg : args) {
-            int n = Integer.parseInt(arg);
-            if (n <= 0 || n > 20) {
-                System.out.println("Введены некорректные данные");
-            } else {
-                System.out.println(calcFact(n, i));
+    public long calcFact(int n) {
+        long buff;
+        if (n == 1) {
+            return 1;
             }
+        else if (n == 0 ) {
+            return 0;
         }
+        else if (n < 0 ) {
+            return -1;
+        }
+        buff = n * calcFact(n -1);
+        if (buff > 0) {
+            return buff;
+        }
+        return -1;
     }
 
-    static long calcFact(int n ,int i) {
-
-        i = ++i;
-
-            if (n == 1) {
-                System.out.print(i +" = ");
-                return 1;
+    public String toString(int n) {
+        StringBuilder str = new StringBuilder();
+        if (n <= 0) {
+            return "принято недопустимое значение";
+        }
+        for (int i = 1; i <= n; i++) {
+            if (i < n & calcFact(i) > 0) {
+                str.append(i).append(" * ");
+            } else if (calcFact(i) > 0)  {
+                str.append(i).append(" = ").append(calcFact(i));
+                break;
+            } else {
+                str.append(i).append(" = ").append("переполнение");
+                break;
             }
-            System.out.print(i + " * ");
-            return n * calcFact(n - 1, i);
-
+        }
+        return str.toString();
     }
 
 }

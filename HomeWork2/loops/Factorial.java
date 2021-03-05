@@ -6,35 +6,37 @@ package HomeWork2.loops;
 
 public class Factorial {
 
-    public static void main(String[] args) {
-
-        for (String arg : args) {
-            int n = Integer.parseInt(arg);
-            long result = 1;
-            if (n <= 0) {
-                System.out.println("Введены некорректные данные");
-            } else {
-
-                for (int i = 1; i <= n; i++) {
-
-                    if (i < n) {
-                        result *= i;
-                    }
-                    if (n == i) {
-                        result *= i;
-                        System.out.print(i + " = " + result);
-                        return;
-                    }
-                    if (result <= 0) {
-                        System.out.print(i + " = переполнение Long ");
-                        return;
-                    }
-                    System.out.print(i + " * ");
-
+    public long calcFactorial(int n) {
+        long result = -1;
+        if (n > 0) {
+            result = 1;
+            for (int i = 1; i <= n; i++) {
+                result *= i;
+                if (result <= 0) {
+                    return -1;
                 }
-                System.out.println(result);
             }
         }
+        return  result;
+    }
+
+    public String toString(int n) {
+        StringBuilder str = new StringBuilder();
+        if (n <= 0) {
+            return "принято недопустимое значение";
+        }
+        for (int i = 1; i <= n; i++) {
+            if (i < n & calcFactorial(i) > 0) {
+                str.append(i).append(" * ");
+            } else if (calcFactorial(i) > 0) {
+                str.append(i).append(" = ").append(calcFactorial(i));
+                break;
+            } else {
+                str.append(i).append(" = ").append("переполнение");
+                break;
+            }
+        }
+        return str.toString();
     }
 }
 

@@ -1,5 +1,6 @@
-package HomeWork3.calcs.additional;
+package HomeWork3.runners;
 
+import HomeWork3.calcs.additional.CalculatorWithCounterAutoComposite;
 import HomeWork3.calcs.simple.CalculatorWithMathCopy;
 import HomeWork3.calcs.simple.CalculatorWithOperator;
 

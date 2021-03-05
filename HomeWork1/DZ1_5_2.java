@@ -1,21 +1,16 @@
 package HomeWork1;
 
-import java.util.Scanner;
+public class DZ1_5_2 implements ICommunicationPrinter {
 
-public class DZ1_5_2 {
-
-    public static void main(String[] args) {
-
-        Scanner in = new Scanner(System.in);
-        System.out.print("Input name: ");
-        String name = in.nextLine();
+    @Override
+    public String welcome(String name) {
+        String welcome = "Я тебя так долго ждал";
         if (name.equals("Вася")) {
-            System.out.println("Привет");
-            System.out.println("Я тебя так долго ждал");
+            welcome = "Привет!\n" + welcome;
+            return welcome;
         } else if (name.equals("Анастасия")) {
-        System.out.println("Я тебя так долго ждал");
+            return welcome;
         } else
-            System.out.println("Добрый день, а вы кто?");
-
+            return "Добрый день, а вы кто?";
     }
 }

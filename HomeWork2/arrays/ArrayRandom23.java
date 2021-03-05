@@ -33,8 +33,8 @@ public class ArrayRandom23 {
 
         int[] array = new int[size]; //создаем массив array c длинной size
         /* заполняем массив int[size] array c  случайными значениями от 0 до maxValueExclusion */
+        Random rand = new Random();
         for (int i = 0; i < size; i++) {
-            Random rand = new Random();
            array[i] = rand.nextInt(maxValueExclusion);
         }
         return  array;

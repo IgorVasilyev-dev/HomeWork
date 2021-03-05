@@ -17,7 +17,6 @@ import java.util.Scanner;
 public class Array222 {
 
     public static void main(String[] args) {
-
         int[] container = arrayFromConsole();
         System.out.println("\nВыводим масси в с помощью Do while");
         methodDoWhile(container);
@@ -43,7 +42,6 @@ public class Array222 {
             System.out.print(container[index] + " "); // Выводим на экран, полученный массив
             index = index +2;
         }
-
     }
 
     static void methodFor(int[] container) {
@@ -54,8 +52,9 @@ public class Array222 {
 
     static void methodForEach(int[] container) {
         for (int value : container) {
-            if (value % 2 == 0)
-            System.out.print(value + " "); // Выводим на экран, полученный массив
+            if (value % 2 == 0) {
+                System.out.print(value + " "); // Выводим на экран, полученный массив
+            }
         }
     }
 

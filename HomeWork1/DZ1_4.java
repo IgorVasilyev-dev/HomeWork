@@ -11,10 +11,6 @@ public class DZ1_4 {
             System.out.println("Пора идти на работу");
     }
     public static boolean sleepIn(boolean weekday, boolean vacation) {
-
-        if (!weekday||vacation) {
-                return true;
-            } else
-                return false;
+        return !weekday || vacation;
     }
 }

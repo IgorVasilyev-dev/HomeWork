@@ -26,8 +26,8 @@ public class Array241 {
     public static int[] arrayRandom(int size, int maxValueExclusion) {
         int[] array = new int[size]; //создаем массив array c длинной size
         /* заполняем массив int[size] array случайными значениями в указанном диапозоне */
+        Random rand = new Random();
         for (int i = 0; i < size; i++) {
-            Random rand = new Random();
             array[i] = (rand.nextInt(2 * maxValueExclusion +1)) - maxValueExclusion;
         }
         return  array;

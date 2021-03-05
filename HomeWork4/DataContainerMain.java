@@ -2,6 +2,7 @@ package HomeWork4;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Iterator;
 
 public class DataContainerMain {
 
@@ -41,9 +42,9 @@ public class DataContainerMain {
         System.out.println(dataContainer.toString()); // [777, 22, 21, 2, 1] поле после сортировки
 
         // 13
-        while (dataContainer.hasNext()) {
-            System.out.print(dataContainer.next() + " ");
-            System.out.println(dataContainer.hasNext());
+        Iterator<Integer> i = dataContainer.iterator();
+        while (i.hasNext()) {
+            System.out.println(i.next());
         }
     }
 

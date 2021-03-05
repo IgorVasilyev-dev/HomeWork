@@ -1,8 +1,14 @@
 package HomeWork3.runners;
 
+import java.text.DecimalFormat;
+
 public class WithoutCalculatorMain {
+
     public static void main(String[] args) {
-        double result = 4.1 + 15 * 7 + (double)(28 / 5 * 28 / 5);
-        System.out.println("result = " + result);
+
+        double result = 4.1 + 15 * 7 +  (double) (28 / 5 * 28 / 5) ;
+        System.out.println(result); // 140.45999999999998
+
     }
+
 }

@@ -17,7 +17,6 @@ import java.util.Scanner;
 public class Array223 {
 
     public static void main(String[] args) {
-
         int[] container = arrayFromConsole();
         System.out.println("\nВыводим масси в с помощью Do while");
         methodDoWhile(container);
@@ -63,7 +62,6 @@ public class Array223 {
     }
 
     public static int[] arrayFromConsole() {
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите длинну массива");
         int size = scanner.nextInt(); // Читаем с клавиатуры размер массива и записываем в size
@@ -73,8 +71,6 @@ public class Array223 {
         for (int i = 0; i < size; i++) {
             arr[i] = scanner.nextInt(); // Заполняем массив элементами, введёнными с клавиатуры
         }
-
         return arr;
-
     }
 }

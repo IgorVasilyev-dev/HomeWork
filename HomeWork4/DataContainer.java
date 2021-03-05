@@ -1,10 +1,12 @@
 package HomeWork4;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Iterator;
 
-public class DataContainer<T> implements Iterator<T> {
+public class DataContainer<T> implements Iterable<T> {
 
     private T[] data;
     private int currentIndexData = 0;
@@ -210,28 +212,36 @@ public class DataContainer<T> implements Iterator<T> {
         return str.toString();
     }
 
-    /**
-     * метод проверяет существование следуйщего элемента в колекции
-     * @return возвращает true если элемент существуею
-     */
     @Override
-    public boolean hasNext() {
-        return currentIndexData < data.length;
+    public @NotNull Iterator<T> iterator() {
+        return new ContainerIterator();
     }
+    private class ContainerIterator implements Iterator<T> {
 
-    /**
-     * метод next() возвращает следующий элемент коллекции
-     * Реализация интерфейса Iterator
-     * @return возвращает следуйщий элемент поля, если список закончен возвращаем null
-     * если дотигнут конец колекции возвращаем null и обнуляем счетчик currentIndexData
-     */
-    @Override
-    public T next() {
-        if (!hasNext()) {
-            currentIndexData = 0;
-            return null;
-        } else {
-            return data[currentIndexData++];
+        /**
+         * метод проверяет существование следуйщего элемента в колекции
+         * @return возвращает true если элемент существуею
+         */
+        @Override
+        public boolean hasNext() {
+            return currentIndexData < data.length;
+        }
+
+        /**
+         * метод next() возвращает следующий элемент коллекции
+         * Реализация интерфейса Iterator
+         * @return возвращает следуйщий элемент поля, если список закончен возвращаем null
+         * если дотигнут конец колекции возвращаем null и обнуляем счетчик currentIndexData
+         */
+        @Override
+        public T next() {
+            if (!hasNext()) {
+                currentIndexData = 0;
+                return null;
+            } else {
+                return data[currentIndexData++];
+            }
         }
     }
 }
+
