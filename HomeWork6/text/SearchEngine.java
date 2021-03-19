@@ -16,14 +16,12 @@ public class SearchEngine implements ISearchEngine {
         Map<String, Integer> data = new HashMap<>();
 
         for ( String w : strings ) {
-
-            if (data.get(w) == null ) {
-                data.put(w, 1);
-            }
-            else {
-                data.put(w, data.get(w) + 1);
-            }
+            data.merge(w, 1, Integer::sum);
         }
-        return data.get(word);
+        try {
+            return data.get(word);
+        } catch (NullPointerException e) {
+            return 0;
+        }
     }
 }

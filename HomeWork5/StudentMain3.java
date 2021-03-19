@@ -11,19 +11,17 @@
 
 package HomeWork5;
 
-import HomeWork5.comparators.*;
+import HomeWork5.comparators.StudentNameComparator;
+import HomeWork5.comparators.StudentScoreAndAgeComparator;
+import HomeWork5.comparators.StudentScoreComparator;
 import HomeWork5.core.GlobalCounter;
-import HomeWork5.core.random.Rand;
 import HomeWork5.core.random.RandStringName;
 import HomeWork5.core.random.api.IRandomTextSpliterator;
 import HomeWork5.core.random.split.TextSpliterator;
 import HomeWork5.dto.Student;
 import HomeWork5.predicate.StudentAgeAndScorePredicate;
-import HomeWork5.predicate.StudentAgePredicate;
-import HomeWork5.predicate.StudentScorePredicate;
 import HomeWork5.suppliers.RandomStudentSupplier;
 import HomeWork5.utils.SortUtils;
-
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -51,7 +49,6 @@ public class StudentMain3 {
         Predicate<Student> predicate2 = new StudentAgeAndScorePredicate(12, 8);
         StudentScoreComparator comp1 = new StudentScoreComparator();
         StudentNameComparator comp2 = new StudentNameComparator();
-        StudentAgeComparator comp3 = new StudentAgeComparator();
         StudentScoreAndAgeComparator comp4 = new StudentScoreAndAgeComparator();
 
         flow(supplier2, predicate2, comp1, comp2, comp4);
