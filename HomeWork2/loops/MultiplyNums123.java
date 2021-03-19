@@ -11,46 +11,30 @@ import java.util.regex.Pattern;
 
 public class MultiplyNums123 {
 
-    public static void main(String[] args) {
+    public String resultToString(String number) {
 
-        String digitRegex = "\\D";
-
-        Pattern pattern;
-        Matcher matcher;
-
-        for (String arg : args) {
-
-            pattern = Pattern.compile(digitRegex);
-            matcher = pattern.matcher(arg);
-
-            if (matcher.find()) {
-                System.out.println("Введено не число");
-                return;
-            }
-
-            int num = Integer.parseInt(arg);
-
-            int result = 1;
-            int revNum = 0;
-
-            while (num != 0) {
-                revNum = revNum * 10 + num % 10;
-                num /= 10;
-            }
-
-            while (revNum > 0) {
-                System.out.print((revNum % 10));
-
-                result *= revNum % 10;
-                revNum = revNum / 10;
-
-                if (revNum > 0) {
-                    System.out.print(" * ");
-                }
-            }
-            System.out.print(" = " + result);
-
+        Pattern pattern = Pattern.compile("[\\D&&[^,.]]");
+        Matcher matcher = pattern.matcher(number);
+        if (matcher.find()) {
+            return "Введено не число";
         }
+        else if (number.contains(".") || number.contains(",")) {
+            return "Введено не целое число";
+        }
+
+        StringBuilder str = new StringBuilder();
+        int num = Integer.parseInt(number);
+        int result = 1;
+        for (int i = 0; i < number.length(); i++) {
+            result *= num % 10;
+            num = num / 10;
+            str.append(number.charAt(i));
+            if (i < number.length() - 1) {
+                str.append(" * ");
+            }
+        }
+        str.append(" = ").append(result);
+        return str.toString();
     }
 }
 

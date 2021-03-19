@@ -8,38 +8,35 @@ package HomeWork2.loops;
 
 public class MultiplyNums122 {
 
-    public static void main(String[] args) {
+    public String resultToString(String number) {
+        StringBuilder str = new StringBuilder();
+        if (number.contains(".") || number.contains(",")) {
+            return "Введено не целое число";
+        }
+        int num = Integer.parseInt(number);
 
-        for (String arg : args) {
-                if (arg.contains(".") || arg.contains(",")) {
-                    System.out.println("Введено не целое число");
-                    return;
-                }
-                int num = Integer.parseInt(arg);
+        int result = 1;
+        int revNum = 0;
 
-                int result = 1;
-                int revNum = 0;
+        while (num != 0) {
+            revNum = revNum * 10 + num % 10;
+            num /= 10;
+        }
 
-                while (num != 0) {
-                    revNum = revNum * 10 + num % 10;
-                    num /= 10;
-                }
+        while (revNum > 0) {
+            str.append(revNum % 10).append(" ");
 
-                while (revNum > 0) {
-                    System.out.print((revNum % 10));
+            result *= revNum % 10;
+            revNum = revNum / 10;
 
-                    result *= revNum % 10;
-                    revNum = revNum / 10;
-
-                    if (revNum > 0) {
-                        System.out.print(" * ");
-                    }
-                }
-                System.out.print(" = " + result);
-
+            if (revNum > 0) {
+                str.append("* ");
             }
         }
+        str.append("= ").append(result);
+        return str.toString();
     }
+}
 
 
 

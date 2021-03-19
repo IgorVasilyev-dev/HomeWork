@@ -8,34 +8,34 @@ package HomeWork2.loops;
 
 public class MultiplyNums121 {
 
-    public static void main(String[] args) {
+    public  String resultToString(String number) {
+        StringBuilder str = new StringBuilder();
+            int num = Integer.parseInt(number);
+            int result = 1;
+            int revNum = 0;
 
-        for (String arg : args) {
-                int num = Integer.parseInt(arg);
-
-                int result = 1;
-                int revNum = 0;
-
-                while (num != 0) {
-                    revNum = revNum * 10 + num % 10;
-                    num /= 10;
-                }
-
-                while (revNum > 0) {
-                    System.out.print((revNum % 10));
-
-                    result *= revNum % 10;
-                    revNum = revNum / 10;
-
-                    if (revNum > 0) {
-                        System.out.print(" * ");
-                    }
-                }
-                System.out.print(" = " + result);
-
+            while (num != 0) {
+                revNum = revNum * 10 + num % 10;
+                num /= 10;
             }
-        }
+
+            while (revNum > 0) {
+                num = revNum % 10;
+                str.append(num).append(" ");
+                result *= revNum % 10;
+                revNum = revNum / 10;
+
+                if (revNum > 0) {
+                    str.append("* ");
+                }
+            }
+            str.append("= ").append(result);
+
+        return str.toString();
     }
+
+}
+
 
 
 

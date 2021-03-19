@@ -1,6 +1,6 @@
 package HomeWork3.calcs.simple;
 
-import HomeWork3.calcs.additional.ICalculator;
+import HomeWork3.calcs.additional.api.ICalculator;
 
 public class CalculatorWithMathExtends  extends CalculatorWithOperator  implements ICalculator {
     @Override

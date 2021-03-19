@@ -1,5 +1,7 @@
 package HomeWork3.calcs.additional;
 
+import HomeWork3.calcs.additional.api.ICalculator;
+
 public class CalculatorWithCounterAutoInterface implements ICalculator {
 
     private long counter;
