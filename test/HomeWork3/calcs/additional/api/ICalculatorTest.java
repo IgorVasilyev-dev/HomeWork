@@ -1,4 +1,4 @@
-package test.additional.api;
+package test.HomeWork3.calcs.additional.api;
 
 import HomeWork3.calcs.additional.api.ICalculator;
 import HomeWork3.calcs.simple.CalculatorWithOperator;

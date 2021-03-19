@@ -1,4 +1,4 @@
-package test.additional;
+package test.HomeWork3.calcs.additional;
 
 import HomeWork3.calcs.additional.CalculatorWithCounterAutoInterface;
 import HomeWork3.calcs.additional.CalculatorWithCounterAutoSuper;
